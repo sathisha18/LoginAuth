@@ -1,0 +1,52 @@
+<html>
+    <body>
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <div class="col-md-6 col-lg-4">
+            <div class="card shadow-lg p-4">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Login</h2>
+                    <form [formGroup]="signinForm" (ngSubmit)="onSignin()">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Username</label>
+                            <input type="email" class="form-control" id="email" formControlName="email" name="email" [ngClass]="{'is-invalid': signinForm.controls['email'].errors && ckDep }">
+                            <small *ngIf="signinForm.controls['email'].errors && ckDep" class="text-danger">Enter Your Email</small>
+                        </div>
+                        <div class="mb-3 position-relative ">
+                            <label for="password" class="form-label">Password</label>
+                            <input
+                              [type]="showPassword ? 'text' : 'password'"
+                              class="form-control"
+                              id="password"
+                              formControlName="password"
+                              name="password"
+                              [ngClass]="{ 'is-invalid': signinForm.controls['password'].errors && ckDep }"
+                            />
+                            <i
+                              class="fa"
+                              [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+                              (click)="togglePasswordVisibility()"
+                              style="position: absolute; right: 10px; top: 45px; cursor: pointer;"
+                            ></i>
+                            <small
+                              *ngIf="signinForm.controls['password'].errors && ckDep"
+                              class="text-danger"
+                              >Enter Your Password</small
+                            >
+                          </div>
+                          
+                        <div class="signinform text-center">
+                            <h4>
+                                Don't have an account?
+                                <a routerLink="/signupform" class="hover-a">Sign-Up</a>
+                            </h4>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #c9d6ff;
+}
+
+/* Apply the background image with full coverage */
+.container-fluid {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+.custom-text {
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: 40px !important;
+  }
+  
+  .custom-button {
+    margin-left: 50px;
+  }

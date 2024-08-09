@@ -1,0 +1,60 @@
+.gradient-custom {
+    /* Uncomment one of the following styles based on your preference */
+    
+    /* 1. Gradient Background */
+    
+    /* 2. Solid Color Background */
+    /* background: #4e54c8; /* Solid color background */
+    
+    /* 3. Background Image */
+    /* background: url('your-image-url.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    
+    /* 4. Combination of Gradient and Image */
+    /* background: linear-gradient(to bottom right, rgba(78, 84, 200, 0.6), rgba(56, 235, 145, 0.6)), url('your-image-url.jpg'); /* Gradient overlay on image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding: 0;
+    margin: 0;
+}
+
+.card-registration {
+    border-radius: 15px;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+@media (max-width: 768px) {
+    .card-registration {
+        margin-top: 20px;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+
+    .gradient-custom {
+        min-height: auto;
+    }
+}
+
+.form-control-lg {
+    min-height: calc(1.5em + 1rem + 2px);
+    font-size: 0.90rem;
+    border-radius: .3rem;
+}

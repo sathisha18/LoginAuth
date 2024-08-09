@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <section class="vh-100 gradient-custom d-flex justify-content-center align-items-center">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h1 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Registration</h1>
+              <form [formGroup]="registrationForm" (ngSubmit)="onRegister()">
+                <div class="row">
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="firstName">First Name</label>
+                      <input type="text" id="firstName" formControlName="firstName" class="form-control form-control-lg" [ngClass]="{'is-invalid': registrationForm.controls['firstName'].errors && ckDep }" />
+                      <small *ngIf="registrationForm.controls['firstName'].errors && ckDep" class="text-danger">Enter Your First Name</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="lastName">Last Name</label>
+                      <input type="text" id="lastName" formControlName="lastName" class="form-control form-control-lg" [ngClass]="{'is-invalid': registrationForm.controls['lastName'].errors && ckDep }" />
+                      <small *ngIf="registrationForm.controls['lastName'].errors && ckDep" class="text-danger">Enter Your Last Name</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-2 d-flex align-items-center">
+                    <div data-mdb-input-init class="form-outline datepicker w-100">
+                      <label for="birthdate" class="form-label">Birthday</label>
+                      <input type="date" id="birthdate" formControlName="birthdate" class="form-control form-control-lg" [ngClass]="{'is-invalid': registrationForm.controls['birthdate'].errors && ckDep }" />
+                      <small *ngIf="registrationForm.controls['birthdate'].errors && ckDep" class="text-danger">Select Your Birthday Date</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label for="gender" class="form-label">Gender</label>
+                      <select id="gender" formControlName="gender" class="form-select form-select-lg" [ngClass]="{'is-invalid': registrationForm.controls['gender'].errors && ckDep }">
+                        <option value="" disabled selected>Select Your Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <small *ngIf="registrationForm.controls['gender'].errors && ckDep" class="text-danger">Select Your Gender</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-2 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="email">Email</label>
+                      <input type="email" id="email" formControlName="email" class="form-control form-control-lg" [ngClass]="{'is-invalid': registrationForm.controls['email'].errors && ckDep }" />
+                      <small *ngIf="registrationForm.controls['email'].errors && ckDep" class="text-danger">Enter Your Email</small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-2 pb-2">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="phoneNumber">Phone Number</label>
+                      <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control form-control-lg" [ngClass]="{'is-invalid': registrationForm.controls['phoneNumber'].errors && ckDep }" />
+                      <small *ngIf="registrationForm.controls['phoneNumber'].errors && ckDep" class="text-danger">Enter Your Phone Number</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-2 pb-2 position-relative">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="password">Password</label>
+                      <input [type]="showPassword ? 'text' : 'password'" id="password" formControlName="password" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': registrationForm.controls['password'].errors && ckDep }" />
+                      <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="togglePasswordVisibility()" style="position: absolute; right: 45px; top: 40px; cursor: pointer;"></i>
+                      <small *ngIf="registrationForm.controls['password'].errors && ckDep" class="text-danger">Enter Your Password</small>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 mb-2 pb-2 position-relative">
+                    <div data-mdb-input-init class="form-outline">
+                      <label class="form-label" for="confirmPassword">Confirm Password</label>
+                      <input [type]="showConfirmPassword ? 'text' : 'password'" id="confirmPassword" formControlName="confirmPassword" class="form-control form-control-lg" [ngClass]="{ 'is-invalid': registrationForm.controls['confirmPassword'].errors && ckDep }" />
+                      <i class="fa" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'" (click)="toggleConfirmPasswordVisibility()" style="position: absolute; right: 40px; top: 45px; cursor: pointer;"></i>
+                      <small *ngIf="registrationForm.controls['confirmPassword'].errors && ckDep" class="text-danger">Enter Your Confirm Password</small>
+                      <small *ngIf="registrationForm.hasError('passwordMismatch') && ckDep" class="text-danger">Passwords do not match!</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-2 pt-2 text-center">
+                  <input data-mdb-ripple-init class="btn btn-primary" type="submit" value="Submit" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
