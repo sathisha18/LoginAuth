@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   ///// Development Url //////
-   _api:'https://authlogin-kappa.vercel.app'
+   _api:'login-auth-virid-nine.vercel.app'
 };
 
 /*
